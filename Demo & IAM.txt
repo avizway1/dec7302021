@@ -1,0 +1,274 @@
+DEPLOYMENT MODELS :
+Public cloud   :  Open for all.. Aws, azure, gcp, oracle cloud… : runs in remore location
+: Metro rail : Main : Dedicated team managed by Service Provider..
+
+Private cloud  : Dedicatedly available for only one org..  It may run in OnPremise / remote location.. Main : Dedicated team to manage the infra / 3rd Party org..!!
+
+Hybrid cloud : combination of one or more cloud patforms.. Public + public
+public + private
+Establish connection : Site-to-site VPN Connection, Direct Connect
+
+POC : Proof of concept : 1M$ --> small part.. design and build the small part
+server (aws) + db (azure)
+
+Community cloud : group of org who have similar req/char build the infra and uses the infra.. 
+Main : One of the member org / 3rd party org.. 
+
+____________________________________________________________________________
+
+D: 17/12/2021
+
+Service Models of Cloud Computing : 
+
+Traditional / On-Premise Infra : 
+
+SaaS Software as a Service
+PaaS Platform as a Service
+IaaS Infrastructure as a Service
+
+Application	
+Data
+middleware		--> Application Admins
+runtime
+OS			--> System Admin/Engineers
+virtualisation		--> citrix/vmware/hyper-v
+Server			--> Wintel/System Admins
+Database		--> DBA
+Storage			--> Storage Admins (SAN/NAS)
+Networking		--> Network Admins
+
+_______________________________________________________________________________________
+
+AWS Free Tier Eligibility : 12 Months
+
+
+S3 : Simple Storage Service : 5 gb standard storage.. 
+ec2 : elastic compute cloud : Server : 750 Hrs / Month.. 1 server x31 days x 24 hrs = 744
+rds : 750 hrs/month.. 
+
+dynamodb : Always free : NoSQL database
+
+
+_______________________________________________________________________________________
+
+D: 21/12/2021
+
+AWS Global Infrastructure : 
+
+Region : NO Technical defination. Region is nothing but a Physical location /Geographical location. AWS Segregated entire world into 26 regions. Every region contains multiple Availability ZOnes (AZ).
+
+Mumbai : ap-south-1 , Jaartha, Sydney, canada
+HYD : ap-south-2
+NV : us-east-1
+
+
+Availability ZOne /AZ : AZ is a Data Center or combination of multiple DCs. One AZ is descreted/Seperated from another AZ.. If any issues happened to one AZ, that should not effect another AZs operations.. SO AWS maintains min of 100Miles between the AZs. 
+We have 84 AZs currently. 
+
+Mumbai : ap-south-1 : ap-south-1a, ap-south-1b, ap-south-1c
+canada : ca-central-1 : ca-central-1a, ca-central-1b, ca-central-1c
+
+
+Edge Locations / PoP Locations : CDN : Content Delivery Network : Cloudfront : 310+
+
+CAPEX : Capital Expendature : 100% for OnPrem : 
+OPEX : Operational Expendature : aws engineer Salary  
+
+pay-as-you-go : Pay for the resources you actually used. : 300 Sec --> 300 Sec
+pay-as-you-grow : 
+
+_______________________________________________________________________________________
+
+D: 22/12/2021
+
+https://aws.amazon.com/free
+
+Sign up for AWS : 
+
+Email Address : 		--> root user		
+
+
+1 AWS account to manage multiple environments : Prod, Non Prod, UAT, DEV, Sandbox
+Create a Dedicated account for every environment : 1 aws prod, 1 nonprod
+
+Contact Information : 
+--> Business - for your work, school, or organization
+--> Personal - for your own projects : Firtname, last name , address	
+
+
+Billing Information : Provide CC/DC information. : visa, master card, amex, discory
+2 INR , Refund back.. 			
+Not supports : Rupay, mastro
+
+Step 4 : Verify your identity :
+
+Phone verification : Enter valid phone number, Call me now.. XXXX on screen.. answer the call and enter the XXXX pin generated on screen. 
+Email verification : We will get COde, ENter the code.. 
+
+Step 5 : Choose Support Plan (SP) : Basic Support Plan
+
+1. Account and Billing related query : 24x7, FOr all SP
+2. Service Limit Increase : 24x7, FOr all SP
+3. Technical Assistance : Depends on SP. 
+
+
+Basic SP : Cost : Free.. 1 & 2 Included.. No Technical Support.. AWS Developer FOrums / Knowledge base Articles
+--> Trusted Advisor : 7 Core area checks 
+
+Developer SP : COst : 29$/Month.. 1 & 2 Included.. 3 --> Email Support.. 12-24 Local hours.. CLoud Support associate.. 
+-->  Trusted Advisor : 7 Core area checks 
+One user can raise ticket.. Unlimited ticket.. 
+Case Severity : 
+General Guidance : <24 Hrs
+System impaired : < 12 Hrs
+
+Business SP : COst : 100$/Month.. 1 & 2 Included.. 3 --> 24x7 email, chat  and phone support.. Cloud support engineer.. 
+-->  Trusted Advisor : Full checks 
+any user can raise ticket.. Unlimited ticket.. 
+Case Severity : 
+General Guidance : <24 Hrs
+System impaired : < 12 Hrs
+Production system impaired : < 4 Hrs
+production system down : < 1 Hr
+
+Enterprise SP : starts from $15,000/Month.. 1 & 2 Included.. 3 --> 24x7 email, chat  and phone support.. Sr. Cloud support engineer.. 
+-->  Trusted Advisor : Full checks 
+any user can raise ticket.. Unlimited ticket.. 
+--> Dedicated TAM (Technical Account manager)
+--> Annual Architectural review.. Operational reviews.. 
+--> Trainings
+Case Severity : 
+General Guidance : <24 Hrs
+System impaired : < 12 Hrs
+Production system impaired : < 4 Hrs
+production system down : < 1 Hr
+Business critical system down : <15 Min
+
+
+______________________________________________________________________________________
+
+D: 23/12/2021
+
+http://aws.amazon.com/console / aws.com
+
+root user : Whenever we are using email id to login to our aws acc, We call him as root user.  Root user will have unrestricted access on our account. 
+
+MFA : 
+Virtual MFA : Google authenticator, MS Authenticator, Authy 2-factor.. 
+Hardware MFA :
+Yubykey / u2f key : 
+
+Least privilages mechanism : Provide permissions to perform there job duties/ativities only. No additional permissions.
+
+share root cred to all these 3 users..?? 
+
+1 : TL : Administrator access : 
+2 : Storage : S3 : 
+3 : Compute : EC2 : 
+
+IAM user : Identity and Access Management : 
+
+1 : TL : IAM User with Administrator access : UN, Pwd
+2 : Storage : IAM User with S3 Full access : UN, Pwd
+3 : Compute : IAM User with EC2 Full access : UN, Pwd
+
+
+Username : s3user
+Access Type : 
+--> Programatic Access : AccessKey ID and Secret Access Key : cli, api, cdk, 3rd party
+--> Management Console : Username, Password and Sign-in : Browser
+
+--> Autogenerated Pwd / CUstom password.. 
+--> ENforce user to create a new password when login first time. 
+
+Allocate Permissions : 
+--> Group level : Create a group, allocate permissions at group level and ass user to group.
+--> Copy permissions from an Existing user. 
+--> Allocate permissions on user. 
+
+Policy : Document that contains set of permissions on AWS environment. 
+
+Add Tags: Adding metadata. (Optional)
+
+Review and Create user. 
+
+______________________________________________________________________________________
+
+D: 24/12/2021
+
+Policy : Set of permissions. Writtens in JSON format. 
+
+AWS Managed POlicy - Job FUnction : Based on standard industry job, AWS provided these polocies. We cannot delete these policies.
+
+AWS Managed POlicy : Based on aws services, we will get these polocies. We cannot delete these policies.
+
+CUstomer Managed Policy : We can create polocies, based on our requirement. 
+
+
+Scenario 1 : Need an IAM user with Only S3 full Access.!!
+
+Scenario 2 :Need an IAM user with Full access on AWS Environment, But not on "S3". 
+		(Except s3, need to provide all services access)
+
+Create an IAM user with "AdministratorAccess" and "Deny S3" Policy.
+
+--> Deny will always have highest priority.  You allowed 100 times, but denied only one time : DENY will take effect..!!
+
+
+Service : S3 / ec2	: S3
+
+Actions : Allow / Deny	: Deny
+			: All Actions	(List/Read/Write)
+
+Resources : Apply to all resources. 	(Limit bucket / Server)
+
+
+An IAM user, need to work only in one specific region, THen we can add below condition. 
+
+           "Condition": {
+                "ForAllValues:StringEquals": {
+                    "aws:RequestedRegion": "ap-south-1"
+___
+
+   "Condition": {
+	 "NotIpAddress": {"aws:SourceIp": "124.123.184.186/32"}
+
+____
+
+Policy simulator : The simulator evaluates the policies that you choose and determines the effective permissions for each of the actions that you specify.
+
+
+arn : Amazon Resource Name : arn:aws:iam::501170960000:user/UserName
+
+Password Policy : A password policy is a set of rules that define the type of password an IAM user can set.
+
+________________________________________
+
+
+Task 1 : Create an IAM user, Provide him "AdministratorAccess". Try to access Billing console.!!! Yes/No.??
+How we can provide billing console access to the User.!!
+
+Task 2 : Create an IAM user, Who can access EC2 Resources only from "Mumbai Region".
+
+Task 3 : Create an IAM user, Create policy to "Deny * in S3 and EC2", Allocate to the IAM user.. Login as IAM User and Test his access on S3/ec2/iam.
+Use Policy SImulator to Simulate his permissions to "Create S3 Bucket".
+
+______
+
+https://join.slack.com/t/awswithavinash/shared_invite/zt-ozg7f9gx-lGdrFMlaOAc_BiPl4V~f4w
+
+______
+
+
+
+
+
+
+
+
+
+
+
+
+
+
