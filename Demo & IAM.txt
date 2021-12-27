@@ -202,7 +202,7 @@ AWS Managed POlicy - Job FUnction : Based on standard industry job, AWS provided
 
 AWS Managed POlicy : Based on aws services, we will get these polocies. We cannot delete these policies.
 
-CUstomer Managed Policy : We can create polocies, based on our requirement. 
+Customer Managed Policy : We can create polocies, based on our requirement. 
 
 
 Scenario 1 : Need an IAM user with Only S3 full Access.!!
@@ -257,17 +257,29 @@ ______
 
 https://join.slack.com/t/awswithavinash/shared_invite/zt-ozg7f9gx-lGdrFMlaOAc_BiPl4V~f4w
 
-______
+_____________________________________________________________________________
+
+D: 27/12/2021
 
 
+Inline Policy : Whenever IAM user limit increasing. 
+--> If we want to provide special permissions for a specific IAM user. 
+--> We can use only once, These are not reusable polocies. 
+
+Permissions Boundary : Set a permissions boundary to control the maximum permissions this user can have.
+
+How to track an IAM user activity.?
+Cloudtrail : Logging service : Enabled by default, 90 Days logs.. 
+
+Cloudwatch : Monitoring service. Server : cpu, disk, network : Graphs
 
 
+____
+
+Task : Create an IAM user, Provide full s3 access... Create and Associate policy to "Activate MFA" himself.
 
 
-
-
-
-
+IAM : Free Tier Eligible
 
 
 
