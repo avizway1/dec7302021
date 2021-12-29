@@ -133,18 +133,9 @@ Data transfer from One region to another region cost us.
 Data transfer within a region won't cost us anything.
 ______________________________________________________________________________________
 
-GDrive : 100 gb  / 1 TB plan / 200 gb
+Task : Create an S3 bucket, Upload some data, Enable versioning.. Upload same data again multiple times.. 
 
-Access Pattern : 
-
-20 gb daily basis			--> S3 Standard
-20 gb infreq				--> Standard-IA / OneZone-IA
-20 gb long term archieve purpose 	--> Glacier / DA
-20 gb non mission critical data.. 	--> RRS
-Whenever we are not sure about ap	--> Intelligent Tier
-
-
-
+Configure Life cycle management rule to Transit objects from S3 standard to Delete after 3 Days.. Previous versions should delete after 2 days.
 
 
 
