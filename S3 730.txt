@@ -47,6 +47,7 @@ Billing Dashboard --> Cost Management Preferences --> Receive Free Tier Usage Al
 Enable Receive Billing Alerts -->  Manage Billing Alerts --> CloudWatch console
 _______________________________________________________________________________
 
+D: 29/12/2021
 
 S3 Storage Classes : 
 
@@ -63,7 +64,11 @@ Data replicates across : >= 3 AZs
 Avai : 99.5 %, Durability : 99.999999999 (11 9's) 
 Data replicates across : 1 AZs
 
---> Glacier : Long-term data archiving with retrieval times ranging from minutes to hours. Data won't be available immedeatly. We need to initiate a data restration to view the data. Restoration takes (1 min - 5 Hrs)
+Glacier Instant Retrieval : Long-lived archive data accessed once a quarter with instant retrieval in milliseconds. 
+Avai : 99.99 %, Durability : 99.999999999 (11 9's) 
+Data replicates across : >= 3 AZs
+
+--> Glacier Flexible Retrieval : Long-term data archiving with retrieval times ranging from minutes to hours. Data won't be available immedeatly. We need to initiate a data restration to view the data. Restoration takes (1 min - 5 Hrs)
 Avai : 99.99 %, Durability : 99.999999999 (11 9's) 
 Data replicates across : >= 3 AZs
 
@@ -84,7 +89,7 @@ S3 Pricing :
 --> How many GET/PUT operations (uploads/downloaded object count)
 --> Data retrivals
 
-Glacier data retrival : 
+Glacier Flexible data retrival : 
 Bulk retrieval : Typically within 5-12 hours.
 Standard retrieval : Typically within 3-5 hours.
 Expedited retrieval : Typically within 1-5 minutes when retrieving less than 250 MB.
@@ -106,6 +111,10 @@ Versioning : SHOW
 _____________________________________________________________________________________
 
 Life Cycle Management Rule : 
+--> We can apply Rule to entire bucket
+--> We can limit rule to a prefix (Folder)
+--> We can limit rule to objects by specifing a "Tag"
+
 
 S3 Standard --> StandardIA --> Glacier --> Delete
 S3 Standard --> Glacier --> Delete
