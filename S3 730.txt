@@ -131,12 +131,95 @@ RTC : Replication time control : Data replicates to destination bucket with in 1
 ___
 Data transfer from One region to another region cost us.
 Data transfer within a region won't cost us anything.
-______________________________________________________________________________________
-
+_______________________
 Task : Create an S3 bucket, Upload some data, Enable versioning.. Upload same data again multiple times.. 
 
 Configure Life cycle management rule to Transit objects from S3 standard to Delete after 3 Days.. Previous versions should delete after 2 days.
 
+___________________________________________________________________________________
+
+Storage classes : 
+Versioning : 
+Life cycle management rule : 
+CRR / SRR : 
+ENcryption : 
+Bucket polocies : 
+
+
+
+D: 30/12/2021
+
+CRR / SRR : 
+--> Source bucket and destination bucket must be enabled with versioning. 
+--> Existing objects will not replicate to the destination bucket.
+--> All future / subsequent uploads will replicate to destination bucket. 
+
+RTC : Replication time control : Data replicates to destination bucket with in 15 Min. (99.99% of the data) : COST US
+
+___
+Data transfer from One region to another region cost us.
+Data transfer within a region won't cost us anything.
+
+
+Server access logging : enable logging on bucket.
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/LogFormat.html
+
+Cloudtrail : Data events : It allow us to log all s3 activities (Current buckets and future buckets).
+____________
+
+
+Event notifications : 
+
+--> SNS : Simple Notification Service : 1000 EMAILs Free Tier eligibility
+--> SQS : Simple Queue Service
+--> Lambda 
+
+--> Make sure you edit the SNS topic's "Access Policy to everyone".
+___________________
+
+
+--> In-Transit Encryption : 
+	SSL (Secure socket layer) / TLS (Transport layer secure)
+
+--> SSE (Server Side Encryption) / At-rest : 
+
+SSE-S3 : S3 platform generates and manages the key material. whoever have valid access on S3 platform can decrypt/view the data. (An encryption key that Amazon S3 creates, manages, and uses for you).
+
+SSE-KMS : Key Management Service : 
+	KMS (AWS managed keys) (aws/s3) DMK(Default Master Key) : KMS Service generates and manages the key material. whoever have valid access on S3 platform can decrypt/view the data. We cannot delete these keys. 
+	 CMK (Customer managed keys) : KMS Service generates and manages the keymaterial.
+Along with S3 platform, the IAM user need to have valid permissions on ENCRYPTION KEY also. NO FREE TIER ELIGIBILITY.
+	SSE-C (Customer Provided Key): Customer generates and upload the key material to KMS and KMS uses this key material to encrypt/decrypt the data. CUstomer can change the key material at any time. NO FREE TIER ELIGIBILITY.
+
+CSE (Client Side Encryption) : Before uploading data to s3 platform, we can use our own software/applications to encrypt the data. That encryptrd data we can send to s3. AWS is not completely responsible for this mechanism.
+
+
+Encryption key generation : 
+--> Provide alias/name.
+--> CHoose type (Symmetric/asymetric) : Symmetric
+Symmetric : A single encryption key that is used for both encrypt and decrypt operations
+Asymmetric : A public and private key pair that can be used for encrypt/decrypt or sign/verify operations
+
+--> key administrative permissions : Who can administrate this key. : 
+--> key usage permissions : Who can use this key to decrypt the data : 
+
+KMS Keys, we cannot delete immedeatly. We need to schedule key deletion (Min: 7 Days, Max: 31 Days)
+
+_____________________
+
+Intelligent-Tiering Archive configurations: 
+
+IT Archive Access tier :  Intelligent-Tiering will automatically move objects that haven’t been accessed for a minimum of 90 days to the Archive Access tier.
+
+Deep Archive Access tier : When enabled, Intelligent-Tiering will automatically move objects that haven’t been accessed for a minimum of 180 days to the Deep Archive Access tier.
+
+____________________
+
+Tag : Add required metadata. 
+Project : 
+POC : 
+Cost Center : 
 
 
 
