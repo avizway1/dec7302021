@@ -176,7 +176,9 @@ Event notifications :
 --> Lambda 
 
 --> Make sure you edit the SNS topic's "Access Policy to everyone".
-___________________
+________________________________________________________________________________________
+
+D: 31/12/2021
 
 
 --> In-Transit Encryption : 
@@ -214,12 +216,7 @@ IT Archive Access tier :  Intelligent-Tiering will automatically move objects th
 
 Deep Archive Access tier : When enabled, Intelligent-Tiering will automatically move objects that haven’t been accessed for a minimum of 180 days to the Deep Archive Access tier.
 
-____________________
-
-Tag : Add required metadata. 
-Project : 
-POC : 
-Cost Center : 
+____________________________________________________________________________
 
 
 
