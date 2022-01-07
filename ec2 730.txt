@@ -37,7 +37,9 @@ If price not increased "YOU termnated instance", we need to pay for full usage h
 
 "NO FREE TIER ELIGIBILITY"
 
-___________
+__________________________________________________________________________________
+
+D: 07/01/2022
 
 Only On-Demand ec2 instances comes under free tier eligibility.
 ** Fix to one region. ap-south-1
@@ -75,7 +77,7 @@ Step 3 : Configure additional settings
 	VPC, ROles, userdata
 
 	Instance Termination protection : Enable (Protect against accidental termination)
-	Shutdown behaviour : STOP
+	Shutdown behaviour : STOP/ Terminate 	: STOP
 
 Step 4 : Choose storage
 
@@ -132,3 +134,36 @@ Task : Launch windows ec2 instance and using keypair get connect to ec2 instance
 Task 2 : Change the password of "Administrator", Disconnect from the instance. Now try to login to ec2 instance using "keypair pwd" , "Custom password".
 
 Task 3 : "Create a new user" in ec2 instance and provide him "Local administrator rights", also provide him "Remote desktop permissions".. Take a session with this user along with administrator.
+
+
+
+
+
+
+
+
+_________________________--
+
+CPU/Processor, Memory/RAM, Storage/HDD, NEtwork/Bluetooth/Wifi/NIC
+Operating System, AV, Ms office
+
+Step 1 : CHoose an AMI Amazon Machine Image (Operating system)
+Step 2 : Choose the instance type
+
+Stable perf from resurces : t2, t3, m
+COmpute Otimized  : CPU : c4, c5 
+Storage optimized : Disk : d, i
+GPU Optim	  : Graphic : p, g
+Memory Optimized  : RAM  : r, x1, z1
+
+
+
+
+
+
+
+
+
+
+
+
