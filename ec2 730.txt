@@ -479,11 +479,13 @@ Tenancy in AWS :
 --> Dedicated Tenancy : Underlying hardware/resources will dedicatedly available to only one AWS customer. It won't share with any other.
 	--> Dedicated Instance : 
 	--> Dedicated Host : Host supports to launch multiple instances. Some applications required physical resources inforamtion to apply the licenses. 
+__
 
 EIP : Elastic IP Address : Dedicated IP address we will get from AWS. We can associate this to an ec2 instance. When Instance is STOP/START, this IP won't change.
 (COST US : NO FREE TIER ELIGIBILITY, EVEN if you generated kept it idle)
 
 *If we restart the Instance, IP Address won't change (Normal/EIP)
+__
 
 ENI : Elastic Network Interface : NIC CARD for Instance.. : 
 --> EC2 instance and ENI should be in same AZ.
@@ -511,17 +513,94 @@ Instance store volumes : We really don't use this in real environments.   (NO FR
 	--> Storage will be delivered from underlying host/physical resources.
 	--> If required, we can reboot. We don't loss any data.
 	--> If underlying h/w failure happens, we'll loss all the data.
+___________________________________________________________________________________
+
+D: 19/01/2022
+
+EFS : Elastic File System : File Share : Shared Storage solution for Multiple ec2 instances. : 
+--> Network File System : NFS v4.1 : Port 2049
+--> Support only Linux OS 
+--> No Pre Provisioning required.
+--> Add entry in "/etc/fstab" file.  Get entry info from "/etc/mtab" file
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0a7fcf6eb8754b423.efs.ap-south-1.amazonaws.com:/ efs
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0a7fcf6eb8754b423.efs.ap-south-1.amazonaws.com:/ /var/www/html/
 
 
+Task : Create EFS, and Mount it to multiple ec2 instances. Deliver Web Content to both the instances from EFS.
+
+___
+
+Windows : Service Name : FSx
+--> SMB Protocol
+________________
+
+Userdata : We can pass commands to our ec2 instance, it executes when we launch instances for the first time. 
+
+curl http://169.254.169.254/latest/user-data/
+
+Linux : #!/bin/bash
+
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<h1>THis is my BSS Webpage</h1>" >> /var/www/html/index.html
+
+#Cloud-init : To execute commands after every reboot
+
+Windows : 
+<powershell> commands </powershell>
+<script>tzutil /s "India Standard Time"</script>
+
+<persist>on/true</persist> : To execute commands after every reboot
+
+____
+
+Metadata : data about the data. We can run this metadata url inside an ec2 instance and we can get the required information about the ec2 instance. 
 
 
+curl http://169.254.169.254/latest/meta-data/
+
+ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+events/
+hibernation/
+hostname
+identity-credentials/
+instance-action
+instance-id
+instance-life-cycle
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
 
 
- 
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<h1>This is my BSS Webserver</h1>" >> /var/www/html/index.html
+
+<script> Commands </script>
+<powershell> commands </powershell>
 
 
+Task : Launch ec2 instance and make it as webserver using Userdata. (Linux)
+Task 2 : Launch windows ec2 instance and setup IST with userdata. Login and verify the timezone.
 
-
-
+TZUTIL /s "India Standard Time"
 
 
