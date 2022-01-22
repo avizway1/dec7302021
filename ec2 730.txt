@@ -699,6 +699,43 @@ service httpd start
 chkconfig httpd on
 copy data from s3 to ec2		(--recursive)
 
+_______________________________________________________________________________________
+
+D: 22/01/2022
+
+Free Tier : 750 Hrs/Month..  
+
+ec2 instance --> install application --> t2.micro --> Verify the metrics
+
+Cloudwatch : Monitors the resources.. Provides the graphs.. 
+
+Vertical Scaling : Upgrading same instance resources.. t2.micro --> c5.2xlarge
+Horizantal Scaling : Distribute application to multiple ec2 instances.. 
+
+Classic ELB : Layer 4/7 LB.. : Outdated.. : http, https, tcp, udp.. 
+Application ELB : Layer 7 ELB.. : http and https
+Network ELB : Layer 4 ELB.. : TCP, UDP, TLS 
+Gateway ELB : GENEVE / 3rd party security virtual applicances.. 
+
+**Please select at least two Subnets in different Availability Zones to provide higher availability for your load balancer.
+
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<h1>This is my WebServer</h1>" > /var/www/html/index.html
+
+
+For ELBs, We will get DNS Endpoint..
+Roundrobin algorithm.. 
+
+Task : Launch multiple webservers in Multiple AZs... COnfigure the Classic ELB. 
+--> Test the Sticky session
+--> Make sure you configure Pipeline mechanism between your ec2 instances and ELB.!!
+
+
+
+
 
 
 
