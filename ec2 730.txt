@@ -753,7 +753,7 @@ Network ELB : TCP..
 --> Flow Hash algorithm.
 --> We CAN assign a dedicated IP address for our network ELB.
 
-Application LB Supports path based routing, also supports Microservices.
+Application LB Supports path based routing, also supports Microservices, DOcker, api gateway.
 
 millions req/sec : NLB
 
@@ -777,7 +777,7 @@ ASG : Auto Scaling Group :
 1. Create a Golden AMI
 2. Create an ELB (Empty LB)
 3. Create an ASG
-	3.1 Create a Launch configuration / Launch template (WHat settings instance)
+	3.1 Create a Launch configuration / Launch template (WHat settings instance need to get)
 	3.2 Configure the ASG (When to scale/ Desired count)
 
 
@@ -804,7 +804,9 @@ Configure Alarm to set Desired capacity as 1, when cpu utilisation is <10.
 
 Configure scheduled scaling to set DC as 3 instance at specific time and test it. 
 
-________
+____________________________________________________________________________________
+
+D: 26/01/2022
 
 Systems Manager run command :
 --> All instance must associated with "SSM ROle". 
@@ -831,6 +833,9 @@ Task : Make linux ec2 instance as webserver without logging to OS level.
 
 Task : Change the timezone of an windows ec2 instance using ssm run command. (tzutil /s "India Standard Time")
 
+__
+EBS 
+Lightsail
 
 
 
