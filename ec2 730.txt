@@ -767,7 +767,6 @@ __________________
 
 D: 25/01/2022
 
-
 ASG : Auto Scaling Group : 
 
 --> DYnamic (Step/Simple) Load 
@@ -817,7 +816,7 @@ Platform : Windows
 Platform : Linux
 
 Naming Standards : Wi-ap1-c2-p : 
-		: Li-ap2-c1-s : 
+		: Li-ap2-c1-u : 
 wi : Windows
 li : Linux
 wt : app code
@@ -832,12 +831,16 @@ AWSSupport-RunEC2RescueForWindowsTool
 Task : Make linux ec2 instance as webserver without logging to OS level.
 
 Task : Change the timezone of an windows ec2 instance using ssm run command. (tzutil /s "India Standard Time")
+________________________
 
-__
-EBS 
-Lightsail
+Elastic beanstalk : PaaS : 
+
+Lightsail : SaaS 
 
 
+_____________________________________
+
+R 53	: DNS Service , RP
 
 
 
