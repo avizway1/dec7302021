@@ -78,6 +78,9 @@ TShirt Size : CIDR of Network.. Subnet.. How big is your network is..!!
 
 Visual Subnet Calc: https://www.davidc.net/sites/default/subnets/subnets.html
 
+
+https://www.youtube.com/watch?v=Ze_X53wdogA
+
 _________
 
 CIDR : Classless InterDomain Routing : 
