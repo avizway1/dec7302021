@@ -90,11 +90,16 @@ CIDR : Classless InterDomain Routing :
 Public Subnet : Internet facing subnet.. :
 Private Subnet : Non-Internet facing subnet.. : 
 
+VPC : Max /16 (65531) , Min /28 (11)
+
 How big VPC we required.?				Ans : /20 (4091 Usable IPs)
 How many subnets we required within the VPC..?		Ans : 2
 How many public SUbnets required within vpc..?		Ans : 1
 How many private SUbnets required within vpc.?		Ans : 1
 Are you going to create any subnets in future.?		Ans : Yes (Have some IPs for future use).
+
+
+--> When we create VPC, we get	1. Default SG, 2. Default NACL, 3. Main ROute Table
 
 
 Step 1 : Create a VPC.
@@ -155,7 +160,8 @@ NAT Instance : Now a days we are not using it.  It is an ec2 instance runs in cu
 --> Source/destination check must be disabled.
 
 --> Make sure your edit PrivateRoute, and add an entry with 0.0.0.0/0 via NAT Instance.
-______________________
+______________________________________________________________________________________
+
 
 Enable Logging on VPC : 
 Flow Logs: We can enable flowlogs at 
