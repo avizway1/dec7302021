@@ -81,7 +81,8 @@ Visual Subnet Calc: https://www.davidc.net/sites/default/subnets/subnets.html
 
 https://www.youtube.com/watch?v=Ze_X53wdogA
 
-_________
+___________________________________________________________________________________
+D: 31/01/2022
 
 CIDR : Classless InterDomain Routing : 
 --> How big network we required. 
@@ -119,7 +120,7 @@ Step 4 : Create RouteTables and Associate appropriate Subnets, add required rout
 
 --> PrivateRoute : Go to SUbnet Association and choose "Private SUbnet".
 
-Step 5 (Optional) : Navigate to Subnets, Choose "Public SUbnet", Actions, "Modify auto assign public ip settings", Enable.
+Step 5 (Optional) : Navigate to Subnets, Choose "Public SUbnet", Actions --> subnet settings, "Modify auto assign public ip settings", Enable.
 
 
 JUMP Server / Bastian Host : Is a Dedicated EC2 instance, Runs in CustomVPC PUblicSUbnet and can be used to connect to all the "Private Subnet" ec2 instances.
@@ -162,6 +163,7 @@ NAT Instance : Now a days we are not using it.  It is an ec2 instance runs in cu
 --> Make sure your edit PrivateRoute, and add an entry with 0.0.0.0/0 via NAT Instance.
 ______________________________________________________________________________________
 
+D: 01/02/2022
 
 Enable Logging on VPC : 
 Flow Logs: We can enable flowlogs at 
@@ -170,6 +172,25 @@ Flow Logs: We can enable flowlogs at
 --> Instance Level
 
 We can choose destination as 1. S3 bucket 2. Cloudwatch Logs groups.
+
+
+{
+    "Statement": [
+        {
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:PutLogEvents"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
+
+
 
 ___
 
@@ -195,7 +216,7 @@ Task : Create a VPC with 4 Subnets. (2 Public SUbnets and 2 Private Subnets)
 Task 2 : draw.io website and design this diagram.
 https://app.diagrams.net/?splash=0&libs=aws4
 
-_________________
+______________________________________________________________________________________
 
 
 VPC Peering : Allow us to enable communication between multiple VPCs. (Same region, DIff region, Diff AWS accout VPCs)
