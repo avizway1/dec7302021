@@ -217,7 +217,7 @@ Task 2 : draw.io website and design this diagram.
 https://app.diagrams.net/?splash=0&libs=aws4
 
 ______________________________________________________________________________________
-
+D: 02/02/2022
 
 VPC Peering : Allow us to enable communication between multiple VPCs. (Same region, DIff region, Diff AWS accout VPCs)
 
@@ -226,8 +226,8 @@ VPC Peering : Allow us to enable communication between multiple VPCs. (Same regi
 --> Update both the VPCs route tables with Another VPC CIDR blocks via Peering connection. 
 
 		Requester VPC			Accepeter VPC
-VPC CIDR	192.168.0.0/20			10.0.0.0/16
-VPC ID		vpc-0baba27f4c9fad064		vpc-051039b0eb6e17524
+VPC CIDR	192.168.0.0/20			172.31.0.0/16
+VPC ID		vpc-09962633b07df31cc		vpc-5fc95922
 Region		ap-south-1			us-east-1
 ACC ID		501170964283			501170964283
 
@@ -236,7 +236,7 @@ ACC ID		501170964283			501170964283
 
 ______________________________
 
-Endpoints : Private Links : It provides private connectivity to the resources. If we have any requirement, s3 rwquests/dynamodb req should not flow over the internet. 
+Endpoints : Private Links : It provides private connectivity to the resources. If we have any requirement, s3 requests/dynamodb req should not flow over the internet. 
 
 NAT Gateway Works with IPv4. 
 If our VPC is configured to use IPv6, Instead of NAT Gateway, We use "Egress Only Internet Gateways".
