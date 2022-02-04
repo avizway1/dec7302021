@@ -49,7 +49,7 @@ Avinash1234
 nslookup myproddb.cfpgnjehw330.ap-south-1.rds.amazonaws.com
 
 
-Enable Public Access : Yes .. DB can be accesable over the internet, We can install tools in local device and connect. 
+Enable Public Access : Yes.. DB can be accesable over the internet, We can install tools in local device and connect. 
 NO : The DB instance will be available to the resources running in same VPC.
 
 
@@ -87,8 +87,13 @@ Task : Launch an Mysql RDS db instance in CUstomVPCs Private SUbnet. Launch an e
 Task 2 : Restore the shared sample db to the rds instance. 
 _________________________________________________________________________________________
 
+D: 04/02/2022
+
 
 MultiAZ Deployment : Designed for Failover/FT purpose. : Creates a standby in a different Availability Zone (AZ) to provide data redundancy, eliminate I/O freezes, and minimize latency spikes during system backups.
+
+192.168.5.104
+192.168.3.249
 
 Automated Backup : This feature creates bacjup copies of our RDS instances automatically.  Based on retention period, we can have backup copies in our aws env to restore. 
 Disable : 0 
@@ -129,13 +134,11 @@ ___
 
 Task 1 : Create environment as mentioned in "VPC1.png"
 
-TASK 2 : https://aws.amazon.com/getting-started/hands-on/deploy-wordpress-with-amazon-rds/
+Task 2 : https://aws.amazon.com/getting-started/hands-on/amazon-efs-backup-and-restore-using-aws-backup/?trk=gs_card
 
-Task 3 : https://aws.amazon.com/getting-started/hands-on/amazon-efs-backup-and-restore-using-aws-backup/?trk=gs_card
+Task 3 : https://aws.amazon.com/getting-started/hands-on/amazon-ebs-backup-and-restore-using-aws-backup/?trk=gs_card
 
-Task 4 : https://aws.amazon.com/getting-started/hands-on/amazon-ebs-backup-and-restore-using-aws-backup/?trk=gs_card
 
-Task 5 : https://aws.amazon.com/getting-started/hands-on/migrate-rdsmysql-to-auroramysql/?trk=gs_card (No free tier)
 ____________________________________________________________________________________
 
 
@@ -198,4 +201,6 @@ Launch another rds mysql db instance-2.. Migrate all the datbases and tables fro
 https://www.youtube.com/watch?v=iRhJDGp-ew8
 
 
+TASK 2 : https://aws.amazon.com/getting-started/hands-on/deploy-wordpress-with-amazon-rds/
 
+Task 5 : https://aws.amazon.com/getting-started/hands-on/migrate-rdsmysql-to-auroramysql/?trk=gs_card (No free tier)
