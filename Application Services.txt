@@ -37,6 +37,8 @@ https://www.youtube.com/watch?v=g_NTrw3UU0w
 
 _________________________________________________________
 
+D: 10/02/2022
+
 AWS Lambda : Serverless architecture. 
 --> Lambda performance depends on memory configurations. 
 
@@ -59,10 +61,12 @@ google.com --> Google
 
 task : Am sharing some lambda functions... Deploy the lambda functions and test it. 
 
-______________________
+______________________________________________________________________________________
+
+D: 11/02/2022
 
 AWS Cloudformation : IaC Infrastructure as Code : JSON/YAML : 
---> it's free.
+--> it's free. 
 
 Prepare a cloudformation stack. This stack are reusable.
 --> CLoudformation created resources will delete automatically when we delete the cloudformation stack.
@@ -71,10 +75,9 @@ rollback on failure : yes
 
 2 ec2 instance, 3 s3 bucket, 1 rds instance
 
-AWS Console Recorder : 
+AWS Console Recorder : Browser plugin
 
 _____________________________________________________________________________________
-
 
 
 Cloud9 : IDE with in AWS environment. 
@@ -88,7 +91,7 @@ Step 2 : Install AWS CDK	npm install -g aws-cdk
 cdk init		--> Initialise the project
 
 
- * `npm run build`   compile typescript to js
+
  * `npm run watch`   watch for changes and compile
  * `npm run test`    perform the jest unit tests
  * `cdk deploy`      deploy this stack to your default AWS account/region
@@ -106,10 +109,9 @@ lib/test-project-stack.ts	--> Our code is here
 
 https://cdkworkshop.com/
 
-
+https://www.youtube.com/watch?v=rtI26X6FJX0&list=PLneBjIzDLECkdgoinrTO7D519zgPEmcte
 __________________________
 
-https://www.youtube.com/watch?v=rtI26X6FJX0&list=PLneBjIzDLECkdgoinrTO7D519zgPEmcte
 
 Codecommit
 CodeDeploy
@@ -191,8 +193,9 @@ https://join.slack.com/t/awswithavinash/shared_invite/zt-ozg7f9gx-lGdrFMlaOAc_Bi
 
 
 
-
-
+Session 1	:	https://vimeo.com/653986059	NARE$H_nIT
+Session 2	:	https://vimeo.com/654396613	NaResH@%AWS
+Session 3	: 	https://vimeo.com/654813773	NARE$H_nIT 
 
 
 
